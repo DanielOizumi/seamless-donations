@@ -317,13 +317,6 @@ function SeamlessDonationsValidateCurrency(validationObject) {
 
         var divSelector = "input[name=" + elementName + "]";
         var errorSelector = "div[id=" + elementName + "-error-message]";
-        
-        // Check if amount is empty
-        if (!elementValue) {
-            jQuery('#seamless-donations-form').find(divSelector).addClass('seamless-donations-invalid-input');
-            jQuery('#seamless-donations-form').find(errorSelector).text('This is a required field.').show('fast');
-            return false;
-        }
 
         // Check for anything other than numbers and decimal points
         var matchTest = elementValue.match(/[^0123456789.]/g);
@@ -380,9 +373,4 @@ function SeamlessDonationsTrim(s) {
     s = s.replace(/[ ]{2,}/gi, " ");
     s = s.replace(/\n /, "\n");
     return s;
-}
-
-function DgxDonateCountNeedles(a, b){
-    var c = b.split(a);
-    return c.length;
 }
